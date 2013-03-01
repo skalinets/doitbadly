@@ -129,7 +129,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="fubu-content\FubuMVC.GettingStarted.dll" />
+    <None Include="HtmlPage1.cshtml" />
     <Content Include="Web.config" />
+    <Content Include="Application.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FubuMVC.cs" />
@@ -141,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="content\" />
+    <Folder Include="Shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

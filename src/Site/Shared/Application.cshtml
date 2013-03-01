@@ -1,0 +1,13 @@
+﻿@using FubuMVC.Core.Assets
+<!DOCTYPE html>
+@{this.Asset("twitterbootstrap");}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>This is application</title>
+</head>
+    <body>
+        This is master page
+        @this.WriteAssetTags()
+        @RenderBody()
+    </body>
+</html>
