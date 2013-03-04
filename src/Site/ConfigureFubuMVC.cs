@@ -8,6 +8,10 @@ namespace Site
         {
             // As is, this will be using all the default conventions and policies
             Actions.IncludeClassesSuffixedWithController();
+            Routes
+                .IgnoreControllerNamespaceEntirely()    
+                .IgnoreClassNameForType<MyModel>()
+                .HomeIs<MyModel>();
         }
     }
 
