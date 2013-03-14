@@ -11,17 +11,21 @@ namespace Site
             Routes
                 .IgnoreControllerNamespaceEntirely()    
                 .IgnoreClassNameForType<MyModel>()
-                .HomeIs<MyModel>();
+                .HomeIs<MyInputModel>();
         }
     }
 
     public class TestController
     {
-        public MyModel Hello()
+        public MyModel Hello(MyInputModel model)
         {
             return new MyModel {Message = "hello from fubu"};
         }
 
+    }
+
+    public class MyInputModel
+    {
     }
 
     public class MyModel

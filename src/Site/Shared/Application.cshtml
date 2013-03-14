@@ -1,4 +1,6 @@
 ﻿@using FubuMVC.Core.Assets
+@using FubuMVC.Diagnostics.Dashboard
+@using FubuMVC.Core.UI
 <!DOCTYPE html>
 @{this.Asset("twitterbootstrap");}
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,6 +10,7 @@
 </head>
 <body>
     <div class="hero-unit">
+        @this.LinkTo(new DashboardRequestModel()).Text("diagnostics").AddClass("btn primary")
         <h1>Вредные советы</h1>
         <p>Как не надо делать</p>
         <p>
