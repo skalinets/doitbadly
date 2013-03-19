@@ -136,6 +136,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FubuMVC.cs" />
+    <Compile Include="Business\IPostRepository.cs" />
+    <Compile Include="Business\Post.cs" />
+    <Compile Include="Business\PostController.cs" />
+    <Compile Include="Business\PostsModel.cs" />
     <Compile Include="ConfigureFubuMVC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

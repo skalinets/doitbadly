@@ -1,8 +1,11 @@
+using System.Web.DynamicData;
 using System.Web.Routing;
 using Bottles;
 using FubuMVC.Core;
 using FubuMVC.StructureMap;
 using StructureMap;
+using StructureMap.Configuration.DSL;
+using StructureMap.Graph;
 
 // You can remove the reference to WebActivator by calling the Start() method from your Global.asax Application_Start
 [assembly: WebActivator.PreApplicationStartMethod(typeof(Site.App_Start.AppStartFubuMVC), "Start", callAfterGlobalAppStart: true)]
@@ -26,8 +29,21 @@ namespace Site.App_Start
                 // but FubuMVC just adds configuration to an IoC container so
                 // that you can use the native registration API's for your
                 // IoC container for the rest of your application
-                .StructureMap(new Container())
+                .StructureMap(ContainerFactory.GetContainer())
                 .Bootstrap();
+        }
+    }
+
+    public class ContainerFactory
+    {
+        public static Container GetContainer()
+        {
+            return new Container(r => 
+                r.Scan(x =>
+                    {
+                        x.AssemblyContainingType<ContainerFactory>();
+                        x.WithDefaultConventions();
+                    }));
         }
     }
 }

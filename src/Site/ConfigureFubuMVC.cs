@@ -1,4 +1,5 @@
 using FubuMVC.Core;
+using Site.Business;
 
 namespace Site
 {
@@ -11,7 +12,7 @@ namespace Site
             Routes
                 .IgnoreControllerNamespaceEntirely()    
                 .IgnoreClassNameForType<MyModel>()
-                .HomeIs<MyInputModel>();
+                .HomeIs<PostController.FooModel>();
         }
     }
 
