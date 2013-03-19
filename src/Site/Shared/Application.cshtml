@@ -3,10 +3,11 @@
 @using FubuMVC.Core.UI
 <!DOCTYPE html>
 @{this.Asset("twitterbootstrap");}
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app>
 <head>
     <title>This is application</title>
     @this.WriteAssetTags()
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
 </head>
 <body>
     <div class="hero-unit">
@@ -30,6 +31,12 @@
                 </ul>
             </div>
             <div class="span10">
+                <div>
+      <label>Name:</label>
+      <input type="text" ng-model="yourName" placeholder="Enter a name here">
+      <hr>
+      <h1>Hello {{yourName}}!</h1>
+    </div>
                 <div id="myCarousel" class="carousel slide" style="width: 600px; height: 400px">
                     @*                    <ol class="carousel-indicators">*@
                     @*                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>*@
